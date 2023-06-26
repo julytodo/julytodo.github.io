@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            background-color:rgba(0, 0, 0, 0.877);
+            color: white;
+        }
+        .content{
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-flow: column;
+        }
+        .task{
+            margin: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px red solid;
+            padding-bottom: 5px;
+        }
+        .task_detail{
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-left: 30px;
+        }
+
+        .task_detail::before{
+            content: " ";
+            width: 1rem;
+            height: 1rem;
+            background-color: rgb(255, 0, 0);
+            border-radius: 50%;
+            position: absolute;
+            transform: translateX(-30px);
+            box-shadow: 0 0 10px 0px red;
+        }
+        .task_time{
+            font-size: 12px;
+            text-transform: uppercase;
+            margin-right: 10px;
+        }
+
+        .completed{
+            border-color: green;
+        }
+        .completed > .task_detail{
+            text-decoration: line-through;
+        }
+        .completed>.task_detail::before{
+            background-color: green;
+            box-shadow: 0 0 10px 0px green;
+        }
+        .heading{
+            font-size: 2rem;
+            margin:1rem 0;
+            font-weight: 900;
+            width: 100%;
+            text-align: center;
+        }
+        .date{
+            font-size: 1rem;
+            text-shadow: 0px 0px 4px rgba(140, 167, 144, 0.829);;
+        }
+    </style>
+    <title>Tasks</title>
+</head>
+<body>
+    <div class="content">
+        <div class="heading">TODO LIST <span class="date">27 June 2023</span></div>
+        <div class="task">
+            <div class="task_detail">Do basics of git</div>
+            <div class="task_time"></div>
+        </div>
+        <div class="task completed">
+            <div class="task_detail">Work on the MapReduce Lab</div>
+            <div class="task_time">2hrs</div>
+        </div>
+    </div>
+</body>
+</html>
